@@ -3,19 +3,28 @@ import React from "react";
 const NavArea = () => {
   return (
     <>
-      <div class="text-center mt-3">
-        <button class="bg-transparent hover:bg-[#443DF6] text-white font-semibold hover:text-white py-2 md:px-8 px-4 border border-white hover:border-transparent rounded">
+      <div className="text-center mt-3">
+        <button
+          className="bg-transparent hover:bg-[#443DF6] btn-block
+         text-white font-semibold hover:text-white py-2 
+         md:px-14 sm:px-8 px-6 border border-white hover:border-transparent 
+         rounded mt-2"
+        >
           New Chat
         </button>
       </div>
-      <div class="mb-6">
-        <div class="">
+      <div className="mb-6">
+        <div className="">
           <hr />
-          <div class="container mx-auto ml-6 gap-4">
-            <h5>Account</h5>
-            <a href="">Contact US</a>
-            <br />
-            <button class="bg-white hover:bg-[#443DF6] text-[#0F1C35] font-semibold hover:text-white py-2 md:px-10 px-4 border border-white hover:border-transparent rounded">
+          <div className="container mx-auto ml-6 gap-4 py-4 space-y-3">
+            <h5 className="">Account</h5>
+            <h6 className="">Contact US</h6>
+            <button
+              className="bg-white hover:bg-[#443DF6] text-[#0F1C35] 
+            font-semibold hover:text-white py-2 md:px-14 sm:px-8 px-6  
+            border border-white hover:border-transparent rounded
+            "
+            >
               Log Out
             </button>
           </div>

@@ -1,10 +1,11 @@
 import React from "react";
+import SubcribeModal from "./SubcribeModal";
 
 const UsesAi = () => {
   return (
     <div className="md:mt-6">
       <h2
-        class="text-2xl text-[#000] font-bold pl-5 pt-5
+        class="md:text-2xl sm:text-xl text-md text-[#000] font-bold pl-5 pt-5
       mb-5"
       >
         Example of types of question to ask RealAssist

@@ -6,30 +6,12 @@ import Answer from "../Template_Parts/Answer";
 import axios from "axios";
 import Typing from "./../Template_Parts/Typing";
 
-const BodyArea = () => {
+const BodyArea = ({ chat }) => {
   const inputRef = useRef();
   const you = "you";
   const ai = "ai";
   const [loading, setLoading] = useState();
-  const [qna, setQna] = useState([
-    // { from: you, value: "me....." },
-    // { from: ai, value: "ai....." },
-    // {
-    //   from: you,
-    //   value:
-    //     "How do I share property descriptions with my clients in the most effective way",
-    // },
-    // { from: ai, value: "You can send them by" },
-    // {
-    //   question:
-    //     "How do I share property descriptions with my clients in the most effective way",
-    //   answer: "You can send them by",
-    // },
-    // {
-    //   question: "what time is it?",
-    //   answer: "See here..........",
-    // },
-  ]);
+  const [qna, setQna] = useState([]);
   const updateQNA = (from, value) => {
     setQna((qna) => [...qna, { from, value }]);
   };
@@ -57,20 +39,23 @@ const BodyArea = () => {
         </p>
       </div>
       <div className="min-h-[89%] flex flex-col justify-between ">
-        {/* <UsesAi /> */}
-        <div className="overflow-y-auto h-[480px]">
-          <DefaultText />
+        {!chat ? (
+          <UsesAi />
+        ) : (
+          <div className="overflow-y-auto h-[480px]">
+            <DefaultText />
 
-          {qna.map((val) => {
-            if (val.from === you) {
-              return <Question question={val.value} />;
-            } else {
-              return <Answer answer={val.value} />;
-            }
-          })}
+            {qna.map((val) => {
+              if (val.from === you) {
+                return <Question question={val.value} />;
+              } else {
+                return <Answer answer={val.value} />;
+              }
+            })}
 
-          {loading && <Typing />}
-        </div>
+            {loading && <Typing />}
+          </div>
+        )}
 
         <div className="mt-4 grid grid-cols-12 gap-4 container mx-auto pl-5 md:mb-6 sm:mb-8 mb-12">
           <div className="col-span-9">

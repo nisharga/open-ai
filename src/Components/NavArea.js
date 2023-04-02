@@ -1,16 +1,21 @@
 import React from "react";
 
-const NavArea = () => {
+const NavArea = ({ chat, startChat }) => {
   return (
     <>
       <div className="text-center mt-3">
         <button
-          className="bg-transparent hover:bg-[#443DF6] btn-block
+          onClick={() => startChat(!chat)}
+          className={`${
+            !chat
+              ? "bg-transparent hover:bg-[#443DF6]"
+              : "hover:bg-transparent bg-[#443DF6]"
+          }  btn-block
          text-white font-semibold hover:text-white py-2 
          md:px-14 sm:px-8 px-6 border border-white hover:border-transparent 
-         rounded mt-2"
+         rounded mt-2`}
         >
-          New Chat
+          {chat ? "End Chat" : "New Chat"}
         </button>
       </div>
       <div className="mb-6">
